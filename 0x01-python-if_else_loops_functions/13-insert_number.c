@@ -14,7 +14,9 @@ listint_t *insert_node(listint_t **head, int number)
 	newnode = malloc(sizeof(listint_t));
 	if (head == NULL)
 	{
-		add_nodeint_end(head, number);
+		newnode->n = number;
+		newnode->next = NULL;
+		return (newnode);
 	}
 	slow = *head;
 	fast = *head;
