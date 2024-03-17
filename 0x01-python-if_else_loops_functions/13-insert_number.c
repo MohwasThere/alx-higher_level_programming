@@ -33,16 +33,17 @@ listint_t *insert_node(listint_t **head, int number)
 		{
 			newnode->next = temp->next;
 			temp->next = newnode;
+			return (newnode);
 		}
 		else if ((temp->n >= number) && flag == 0)
 		{
 			newnode->next = temp;
 			temp->next = newnode;
 			flag++;
-
+			return (newnode);
 		}
 		temp = temp->next;
 	}
 	free_listint(temp);
-	return (newnode);
+	return (NULL);
 }
